@@ -33,7 +33,7 @@ test('should set up edit expense action object', () => {
     })
 })
 
-test('should edit expenses from firebase', () => {
+test('should edit expenses from firebase', (done) => {
     const store = createMockStore({})
     const id = expenses[0].id
 
@@ -52,6 +52,7 @@ test('should edit expenses from firebase', () => {
                 description: 'candy',
                 ...newExpense
             })
+            done()
         })
     })
 })

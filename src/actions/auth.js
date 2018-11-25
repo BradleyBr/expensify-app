@@ -7,6 +7,9 @@ export const login = (uid) => ({
 
 export const startLogin = () => {
     return () => {
+        googleAuthProvider.setCustomParameters({
+            prompt: 'consent'
+        })
         return firebase.auth().signInWithPopup(googleAuthProvider)
     }
 }
